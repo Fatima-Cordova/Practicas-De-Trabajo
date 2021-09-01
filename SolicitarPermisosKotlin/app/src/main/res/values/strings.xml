@@ -3,4 +3,5 @@
 
     <string name="txtDatos"> </string>
     <string name="btnEnviar">enviar</string>
+    <string name="txtRecycler"></string>
 </resources>
