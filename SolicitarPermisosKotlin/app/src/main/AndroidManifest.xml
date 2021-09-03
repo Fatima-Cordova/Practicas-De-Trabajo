@@ -13,14 +13,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SolicitarPermisosKotlin">
-        <activity android:name=".MainActivity2"></activity>
-        <activity android:name=".MainActivity">
+        <activity android:name=".UsuarioActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ListaUsuariosActivity">
+
+        </activity>
+
+        <activity
+            android:name=".MenuActivity"
+            android:label="@string/title_activity_menu"
+            android:theme="@style/Theme.SolicitarPermisosKotlin.NoActionBar">
+
+        </activity>
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".MainActivity" />
     </application>
 
 </manifest>

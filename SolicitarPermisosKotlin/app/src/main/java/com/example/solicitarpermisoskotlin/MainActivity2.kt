@@ -32,11 +32,11 @@ class MainActivity2 : AppCompatActivity() {
     }
 
     private fun  initialize() {
-        edtBuscar = findViewById(R.id.edtBuscar)
-        btnBuscar = findViewById(R.id.btnBuscar)
-        txtMensaje = findViewById(R.id.txtMensaje)
-        txtUserId = findViewById(R.id.txtUserId)
-        txtId = findViewById(R.id.txtId)
+        edtBuscar = findViewById(R.id.edtBuscarUsuario)
+        btnBuscar = findViewById(R.id.btnBuscarMensajes)
+        txtMensaje = findViewById(R.id.txtUserName)
+        txtUserId = findViewById(R.id.txtId)
+        txtId = findViewById(R.id.txtName)
         switchBoolean = findViewById(R.id.switchBoolean)
         setContent(MessageResponse())
     }

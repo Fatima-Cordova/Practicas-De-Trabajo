@@ -9,8 +9,8 @@ import com.example.solicitarpermisoskotlin.R
 import com.example.solicitarpermisoskotlin.retrofit.model.MessageResponse
 import com.example.solicitarpermisoskotlin.retrofit.model.UserResponse
 
-class AdaptadorRecycler (private val newsList: ArrayList<MessageResponse>) :
-    RecyclerView.Adapter<AdaptadorRecycler.MyViewHolder>(){
+class UsersAdapter (private val listUsers : ArrayList<UserResponse>) :
+    RecyclerView.Adapter<UsersAdapter.MyViewHolder>(){
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -21,17 +21,17 @@ class AdaptadorRecycler (private val newsList: ArrayList<MessageResponse>) :
     inner class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val txtDatosRecycler: TextView = itemView.findViewById(R.id.txtMensajesRecycler)
 
-        fun bind(messageResponse: MessageResponse) {
-            txtDatosRecycler.text = messageResponse.title
+        fun bind(userResponse: UserResponse) {
+            txtDatosRecycler.text = userResponse.name
         }
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(newsList[position])
+        holder.bind(listUsers[position])
     }
 
     override fun getItemCount(): Int {
-        return newsList.size
+        return listUsers.size
     }
 
 }
