@@ -2,8 +2,10 @@ package com.example.solicitarpermisoskotlin
 
 import android.Manifest
 import android.app.AlertDialog
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -116,6 +118,13 @@ class MainActivity : AppCompatActivity() {
             listaMensajes.addAll(updateMsjs)
             adaptadorRecycler.notifyDataSetChanged()
         }
+    }
+
+    fun search(view: View) {
+        val intent = Intent(this, MainActivity2::class.java).apply {
+
+        }
+        startActivity(intent)
     }
 }
 

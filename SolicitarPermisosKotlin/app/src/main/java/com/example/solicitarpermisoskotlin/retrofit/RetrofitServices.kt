@@ -1,16 +1,24 @@
 package com.example.solicitarpermisoskotlin.retrofit
 
 import com.example.solicitarpermisoskotlin.retrofit.model.MessageResponse
+import com.example.solicitarpermisoskotlin.retrofit.model.UserResponse
 import okhttp3.MultipartBody
 import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Multipart
-import retrofit2.http.Part
+import retrofit2.http.*
 
 
 interface RetrofitServices {
 
     @GET("todos/")
     fun getListaMensajes(): Call<List<MessageResponse>>
+
+    @GET("todos/{id}")
+    fun getMensaje(@Path("id") idMensaje : String): Call<MessageResponse>
+
+    @GET("users/")
+    fun getUsers() : Call<List<UserResponse>>
+
+    @GET("users/{id}")
+    fun getUser(@Path("id") idUser : String) : Call<UserResponse>
 }
 

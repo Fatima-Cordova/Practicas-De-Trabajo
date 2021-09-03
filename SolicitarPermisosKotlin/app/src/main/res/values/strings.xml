@@ -2,6 +2,13 @@
     <string name="app_name">SolicitarPermisosKotlin</string>
 
     <string name="txtDatos"> </string>
-    <string name="btnEnviar">enviar</string>
+    <string name="txtURL">https://jsonplaceholder.typicode.com/todos/</string>
+    <string name="txtTitle">Title:  </string>
+    <string name="txtUserId">UserId:  </string>
+    <string name="id">Id:  </string>
+    <string name="btnBuscar">buscar</string>
+    <string name="edtIngresar">id...</string>
+    <string name="btnIngresar">buscar</string>
     <string name="txtRecycler"></string>
+
 </resources>
