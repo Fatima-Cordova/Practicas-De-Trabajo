@@ -107,7 +107,7 @@ class UsuarioActivity : AppCompatActivity() {
         if(userResponse != null) {
             txtId.text = userResponse.id.toString()
             txtName.text = userResponse.name
-            txtUserName.text = userResponse.userName
+            txtUserName.text = userResponse.username
             txtEmail.text = userResponse.email
             txtStreet.text = userResponse.address.street
             txtSuite.text = userResponse.address.suite
@@ -116,9 +116,9 @@ class UsuarioActivity : AppCompatActivity() {
             txtLat.text = userResponse.address.geo.lat.toString()
             txtLng.text = userResponse.address.geo.lng.toString()
             txtPhone.text = userResponse.phone
-            txtWebSite.text = userResponse.webSite
+            txtWebSite.text = userResponse.website
             txtNameCompany.text = userResponse.company.name
-            txtCatchPharse.text = userResponse.company.catchPharse
+            txtCatchPharse.text = userResponse.company.catchPhrase
             txtBs.text = userResponse.company.bs
 
 

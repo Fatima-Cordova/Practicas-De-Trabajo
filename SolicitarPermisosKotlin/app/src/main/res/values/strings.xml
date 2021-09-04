@@ -3,6 +3,7 @@
 
     <string name="txtDatos"> </string>
     <string name="txtURL">https://jsonplaceholder.typicode.com/todos/</string>
+    <string name="txtURLUsuarios">https://jsonplaceholder.typicode.com/users/</string>
     <string name="txtTitle">Title:  </string>
     <string name="txtUserId">UserId:  </string>
     <string name="id">Id:  </string>

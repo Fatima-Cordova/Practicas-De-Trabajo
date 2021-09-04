@@ -54,7 +54,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/txtURL"
+        android:text="@string/txtURLUsuarios"
         android:textColor="#0B0B0B"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -192,17 +192,17 @@
 
     <TextView
         android:id="@+id/txtCatchPharse"
-        android:layout_width="182dp"
+        android:layout_width="275dp"
         android:layout_height="26dp"
         android:gravity="center_vertical"
         android:textColor="#000000"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.537"
+        app:layout_constraintHorizontal_bias="0.882"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNameCompany"
-        app:layout_constraintVertical_bias="0.081" />
+        app:layout_constraintVertical_bias="0.056" />
 
     <TextView
         android:id="@+id/txtBs"
@@ -422,7 +422,7 @@
         android:id="@+id/textView18"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CatchPharse"
+        android:text="CatchPhrase"
         android:textColor="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
