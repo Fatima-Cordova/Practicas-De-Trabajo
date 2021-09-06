@@ -141,6 +141,4 @@ class UsuarioActivity : AppCompatActivity() {
             txtBs.text = ""
         }
     }
-
-
 }
