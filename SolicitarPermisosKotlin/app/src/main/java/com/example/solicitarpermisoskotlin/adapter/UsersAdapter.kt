@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solicitarpermisoskotlin.R
-import com.example.solicitarpermisoskotlin.retrofit.model.MessageResponse
 import com.example.solicitarpermisoskotlin.retrofit.model.UserResponse
 
 class UsersAdapter (private val listUsers : ArrayList<UserResponse>) :
@@ -19,7 +18,7 @@ class UsersAdapter (private val listUsers : ArrayList<UserResponse>) :
     }
 
     inner class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val txtDatosRecycler: TextView = itemView.findViewById(R.id.txtMensajesRecycler)
+        val txtDatosRecycler: TextView = itemView.findViewById(R.id.txtList)
 
         fun bind(userResponse: UserResponse) {
             txtDatosRecycler.text = userResponse.name

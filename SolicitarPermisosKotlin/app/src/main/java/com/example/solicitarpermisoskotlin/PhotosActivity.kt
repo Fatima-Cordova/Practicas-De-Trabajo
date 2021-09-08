@@ -40,7 +40,7 @@ class PhotosActivity : AppCompatActivity() {
     private fun  initializeRecyclerView() {
         val manager = LinearLayoutManager(this)
         listaPhotos = ArrayList()
-        photosAdapter = PhotosAdapter(listaPhotos)
+        photosAdapter = PhotosAdapter(listaPhotos, this)
         recycler.setHasFixedSize(true)
         recycler.layoutManager = manager
         recycler.adapter = photosAdapter

@@ -7,7 +7,6 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.solicitarpermisoskotlin.R
 import com.example.solicitarpermisoskotlin.retrofit.model.MessageResponse
-import com.example.solicitarpermisoskotlin.retrofit.model.UserResponse
 
 class AdaptadorRecycler (private val newsList: ArrayList<MessageResponse>) :
     RecyclerView.Adapter<AdaptadorRecycler.MyViewHolder>(){
@@ -19,7 +18,7 @@ class AdaptadorRecycler (private val newsList: ArrayList<MessageResponse>) :
     }
 
     inner class MyViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val txtDatosRecycler: TextView = itemView.findViewById(R.id.txtMensajesRecycler)
+        val txtDatosRecycler: TextView = itemView.findViewById(R.id.txtList)
 
         fun bind(messageResponse: MessageResponse) {
             txtDatosRecycler.text = messageResponse.title
