@@ -87,6 +87,10 @@ class PhotoActivity : AppCompatActivity() {
     private fun updateUI(photosResponse: PhotosResponse) {
         if(photosResponse != null) {
             setContent(photosResponse)
+            Picasso
+                .get()
+                .load(photosResponse.url)
+                .into(imgPhoto)
         }
     }
 
