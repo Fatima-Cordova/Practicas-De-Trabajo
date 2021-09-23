@@ -1,4 +1,4 @@
-package com.example.camara
+package com.example.myapplication
 
 import android.content.Context
 import android.graphics.Bitmap
@@ -8,16 +8,15 @@ import android.media.ExifInterface
 import android.net.Uri
 import android.os.Environment
 import androidx.core.content.FileProvider
-import java.io.ByteArrayOutputStream
-import java.io.File
-import java.io.FileOutputStream
-import java.io.IOException
+import java.io.*
 
 class ImageManager {
 
     companion object{
         private const val EXTENSION : String = ".jpg"
         const val IMAGE_TEMP : String = "camera_photo${EXTENSION}"
+
+        private const val FILE_EXPORT : String = "file_export.jpg"
 
         const val IMAGE_QUALITY_TO_SAVE : Int = 65
         const val IMAGE_WIDTH_TO_SAVE : Float = 480F
@@ -40,12 +39,33 @@ class ImageManager {
         this.imageFile = directory.absolutePath.toString()
         this.imageFile += "/${IMAGE_TEMP}"
 
+
         this.imageToSave = directory.absolutePath.toString()
         this.imageToSave += "/${IMAGE_TEMP_TO_SAVE}"
+
+    }
+
+    fun getImageToSave(): File {
+        return File(this.imageToSave)
     }
 
     fun getImagePath(): String {
         return this.imageFile
+    }
+
+    fun createJPG() {
+        if (isBaseDirectoryExist()) {
+            try {
+                val fileName: String = directory.getAbsolutePath()
+                    .toString() + "/" + System.currentTimeMillis() + FILE_EXPORT
+
+                imageToSave = File(fileName).toString();
+
+            } catch (e: IOException) {
+                e.printStackTrace()
+            }
+        } else {
+        }
     }
 
     fun isSave() : Boolean {
