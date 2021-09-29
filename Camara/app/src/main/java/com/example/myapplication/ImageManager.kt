@@ -38,8 +38,7 @@ class ImageManager {
         this.directory = File(this.context.getExternalFilesDir(null), Environment.DIRECTORY_PICTURES)
         this.imageFile = directory.absolutePath.toString()
         this.imageFile += "/${IMAGE_TEMP}"
-
-
+        
         this.imageToSave = directory.absolutePath.toString()
         this.imageToSave += "/${IMAGE_TEMP_TO_SAVE}"
 
@@ -53,20 +52,6 @@ class ImageManager {
         return this.imageFile
     }
 
-    fun createJPG() {
-        if (isBaseDirectoryExist()) {
-            try {
-                val fileName: String = directory.getAbsolutePath()
-                    .toString() + "/" + System.currentTimeMillis() + FILE_EXPORT
-
-                imageToSave = File(fileName).toString();
-
-            } catch (e: IOException) {
-                e.printStackTrace()
-            }
-        } else {
-        }
-    }
 
     fun isSave() : Boolean {
         return try {

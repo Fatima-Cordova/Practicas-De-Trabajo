@@ -63,39 +63,38 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun export(view: View) {
+    fun export(view: View?) {
         if (imgPhoto != null) {
             btnExport.setEnabled(false)
-            val exportJPG = ImageManager(this)
-            exportJPG.createJPG()
-            showMessage("Archivo CSV exportado")
+            val exportJPG = imageManager
+            exportJPG.isCreateBaseImageFile()
+      //      showMessage("Archivo JPG exportado")
             uploadImage(exportJPG.getImageToSave())
         } else {
             showMessage("No hay fotos para exportar")
         }
-
     }
 
-    private fun uploadImage(photo: File) {
+    private fun uploadImage(file: File) {
+        val requestFile: RequestBody = RequestBody.create(MediaType.parse("image/jpeg"), file)
+        val body = MultipartBody.Part.createFormData("image", "image.jpg", requestFile)
 
-        val filePart = MultipartBody.Part.createFormData(
-                "uploadFile", photo.name, RequestBody.create(MediaType.parse("image/*"), photo))
+        val retroServices: RetrofitServices = RetrofitInstance.getInstance()!!.create(RetrofitServices::class.java)
 
-        val retrofitServices = RetrofitInstance.getInstance()?.create(RetrofitServices::class.java)
-
-        val responseCall = retrofitServices?.uploadAttachment(filePart)
-        responseCall?.enqueue(object: Callback<PhotoResponse> {
-            override fun onResponse(call: Call<PhotoResponse>, response: Response<PhotoResponse>) {
-                btnExport.isEnabled = true
-                showMessage("Archivo guardado en el servidor")
+        val responseCall: Call<PhotoResponse> = retroServices.uploadImage(body)
+        responseCall.enqueue(object : Callback<PhotoResponse?> {
+            override fun onResponse(call: Call<PhotoResponse?>, response: Response<PhotoResponse?>) {
+                if (response.isSuccessful()) {
+                    btnExport.setEnabled(true)
+                    showMessage("Archivo guardado en el servidor")
+                }
             }
 
+            override fun onFailure(call: Call<PhotoResponse?>, t: Throwable) {
+                btnExport.setEnabled(true)
+                showMessage("Error al subir el archivo")
+            }
         })
-
-        override fun onFailure(call : Call<PhotoResponse>, t: Throwable) {
-            btnExport.isEnabled = true
-            showMessage("Error al subir el archivo")
-        }
     }
 
     private fun preview() {
